@@ -1,5 +1,3 @@
-# create two output files: set of positive MAGs and set of negative MAGs
-
 import pandas as pd
 import os
 
@@ -23,6 +21,7 @@ print(pos_df.count()) # why are my counts different from Stephen's?
 print(neg_df.count())
 
 # write pos and neg to output files
-output = ["bin_id"]
-pos_df.to_csv(os.path.join(path, "set_positive.csv"), columns=output)
-neg_df.to_csv(os.path.join(path, "set_negative.csv"), columns=output)
+output = ["sample_id", "bin_id"]
+pos_df.to_csv(os.path.join(path, "set_positive.csv"), columns=output, index=False)
+neg_df.to_csv(os.path.join(path, "set_negative.csv"), columns=output, index=False)
+
