@@ -32,4 +32,4 @@ with open(os.path.join(path, "set_pattern.txt"), "w+") as output:
 		output.write("%s\n" % item)
 
 # RUN THE FOLLOWING COMMAND:
-# $grep --color=never -f pos_pattern.txt tetra_med.tsv >> output.txt
+# $grep --color=never -f set_pattern.txt tetra_med.tsv >> output.txt
