@@ -22,3 +22,6 @@ k in a { print $0, a[k] }
 
 # output
 # [tetra columns 1-8] [gc columns 5-8] [length columns 5-8] [depth columns 5-8]
+
+# to add the label columns:
+# awk 'BEGIN { OFS = "\t" } {print "LABEL", $0}' input.csv > output.csv
