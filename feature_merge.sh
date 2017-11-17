@@ -1,3 +1,7 @@
+#merges the features into one file
+# output
+# [tetra columns 1-8] [gc columns 5-8] [length columns 5-8] [depth columns 5-8]
+
 awk '
 BEGIN { FS=OFS="\t" }
 { k = $1 FS $2 FS $3 }
@@ -19,9 +23,3 @@ BEGIN { FS=OFS="\t" }
 NR==FNR { a[k]=$5 FS $6 FS $7 FS $8; next }
 k in a { print $0, a[k] }
 ' depth_sets.txt tetra_gc_length.txt > tetra_gc_length_depth.txt
-
-# output
-# [tetra columns 1-8] [gc columns 5-8] [length columns 5-8] [depth columns 5-8]
-
-# to add the label columns:
-# awk 'BEGIN { OFS = "\t" } {print "LABEL", $0}' input.csv > output.csv
